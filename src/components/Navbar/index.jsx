@@ -30,11 +30,6 @@ const Navbar = () => {
           </NavLink>
         </li>
         <li className='navbar_item'>
-          <NavLink to='/search' activeClassName='active'>
-            Search
-          </NavLink>
-        </li>
-        <li className='navbar_item'>
           <a
             target='_blank'
             rel='noopener noreferrer'

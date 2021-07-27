@@ -4,6 +4,7 @@ import Homepage from './components/Homepage';
 import Navbar from './components/Navbar';
 import Banner from './components/Banner';
 import Detail from './components/Detail';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
             <Route path='/detail/:id' component={Detail} />
           </Switch>
         </RestaurantContextProvider>
+        <Footer />
       </div>
     </Router>
   );
