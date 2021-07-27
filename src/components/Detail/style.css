@@ -1,0 +1,319 @@
+/*
+
+  Main 
+
+*/
+
+.restaurant {
+  width: 70%;
+  margin: 30px auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+/* 
+
+  Image 
+
+*/
+
+.restaurant_image {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.restaurant_image > img {
+  min-height: 100%;
+}
+
+/* 
+
+  Detail Label
+
+*/
+
+.detail_menu {
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  min-width: fit-content;
+}
+
+.detail_label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0.5px 5px 0px rgb(0 0 0 / 50%);
+}
+
+.detail_button {
+  border: none;
+  background-color: white;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-weight: var(--fw-med);
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.detail_button.active {
+  border-top: 2px solid yellow;
+  color: var(--second-color);
+}
+
+.detail_button:hover {
+  color: var(--second-color);
+}
+
+.detail_button > i {
+  color: var(--second-color);
+  margin-left: 10px;
+}
+
+.detail_content {
+  padding: 30px 20px 20px 20px;
+  min-height: 500px;
+}
+
+.menu_desc,
+.foodndrink_container,
+.addReview {
+  animation: slideInUp 0.5s ease;
+}
+
+/* 
+
+  Details
+
+*/
+
+.menu_title {
+  margin-bottom: 20px;
+}
+
+.title_name {
+  font-size: 24px;
+}
+
+.title_tag {
+  margin-top: 10px;
+  display: flex;
+}
+
+.title_tag > li {
+  font-family: var(--second-font);
+  font-size: 18px;
+  color: grey;
+}
+
+.title_tag > li:nth-child(1) {
+  margin-right: 10px;
+}
+
+.menu_address {
+  margin-bottom: 10px;
+}
+
+.menu_address_rating > * {
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+
+.icon {
+  width: 30px;
+  text-align: center;
+  margin-right: 5px;
+  color: var(--second-color);
+  font-size: 18px;
+}
+
+.menu_text {
+  margin: 20px 0;
+  line-height: 1.25;
+  font-weight: var(--fw-reg);
+}
+
+/* 
+
+  Food and Drink
+
+*/
+
+.food_drink {
+  display: flex;
+  justify-content: space-around;
+}
+
+.food_drink .title {
+  font-family: var(--second-font);
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.food_drink .title span {
+  margin-right: 10px;
+}
+
+.food_drink .title span i {
+  color: var(--second-color);
+}
+
+.food_drink li {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+/* 
+
+  Add Review
+
+*/
+
+.addReview h3 {
+  font-size: 24px;
+  font-weight: var(--fw-reg);
+}
+
+.addReview input,
+.addReview textarea {
+  border: none;
+  width: 100%;
+  padding: 20px;
+  font-size: 16px;
+  background-color: var(--bg-greyish);
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.addReview textarea {
+  min-height: 200px;
+}
+
+.addReview input:focus,
+.addReview textarea:focus {
+  outline: none;
+}
+
+.addReview input[type='submit'] {
+  max-width: 20%;
+  padding: 10px;
+  margin-top: 20px;
+  border: 2px solid var(--second-color);
+  background-color: white;
+  border-radius: 10px;
+  color: var(--main-color);
+  font-weight: var(--fw-reg);
+  font-size: 15px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.addReview input[type='submit']:hover {
+  color: white;
+  background-color: var(--second-color);
+  padding: 12px;
+}
+
+/* 
+
+  Reviews
+
+*/
+
+.detail_review {
+  grid-column: 1 / 3;
+  margin-top: 30px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.reviews_title {
+  text-align: center;
+  font-size: 26px;
+  font-weight: var(--fw-med);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.reviews_item {
+  min-height: 80px;
+  margin: 0 20px 20px 20px;
+  padding: 20px;
+  background-color: var(--bg-greyish);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 15px;
+}
+
+.reviews_item:nth-child(2) {
+  animation: slideInUp 0.5s;
+}
+
+.reviews_content {
+  display: flex;
+  align-items: center;
+}
+
+.reviews_name {
+  font-weight: var(--fw-med);
+}
+
+.reviews_date {
+  margin-left: 10px;
+  font-weight: var(--fw-thin);
+  font-size: 14px;
+  color: grey;
+}
+
+.reviews_text {
+  margin-top: 15px;
+  font-size: 16px;
+}
+
+/* Animation  */
+.zoomIn {
+  -webkit-animation-name: zoomIn;
+  animation-name: zoomIn;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.slideInUp {
+  -webkit-animation-name: slideInUp;
+  animation-name: slideInUp;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+@-webkit-keyframes slideInUp {
+  0% {
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+    visibility: visible;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@keyframes slideInUp {
+  0% {
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+    visibility: visible;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}

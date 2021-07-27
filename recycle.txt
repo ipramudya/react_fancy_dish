@@ -1,0 +1,21 @@
+  const [showMenu, setShowMenu] = useState(true);
+  const [showDetail, setShowDetail] = useState(false);
+  const [showReview, setShowReview] = useState(false);
+
+
+{showMenu ? (
+        <section>
+          <div className='menu_title'>
+            <h3>{restaurant.name}</h3>
+            <ul>
+              {restaurant.categories.map((element, idx) => (
+                <li key={idx}>{element.name}</li>
+              ))}
+            </ul>
+          </div>
+          <div className='menu_address'></div>
+          <p className='menu_desc'>{restaurant.description}</p>
+        </section>
+      ) : null}
+
+
