@@ -3,7 +3,9 @@ import { RestaurantContext } from '../../context/RestaurantContext';
 import Loaders from '../Loaders';
 
 const MenuDesc = () => {
-  const { restaurant } = useContext(RestaurantContext);
+  const {
+    restaurant: { restaurant },
+  } = useContext(RestaurantContext);
 
   return restaurant.length !== 0 ? (
     <div className='menu_desc'>

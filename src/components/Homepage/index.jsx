@@ -2,16 +2,19 @@ import { useState } from 'react';
 import ENDPOINTS from '../../global/endpoints';
 import RestaurantList from './RestaurantList';
 import Loader from '../Loaders';
-import useFetch from '../../hooks/useFetch';
 import './style.css';
+import useAxios from '../../hooks/useAxios';
 
 const Homepage = () => {
   const [query, setQuery] = useState('');
   const {
-    data: { restaurants: allRestaurants },
-    isPending,
+    restaurant: { restaurants: allRestaurants },
+    loading,
     error,
-  } = useFetch(ENDPOINTS.ALL_RESTAURANTS);
+  } = useAxios({
+    url: ENDPOINTS.ALL_RESTAURANTS,
+    method: 'get',
+  });
 
   return (
     <div className='Homepage'>
@@ -35,7 +38,7 @@ const Homepage = () => {
           </span>
         </div>
       </div>
-      {isPending && <Loader />}
+      {loading && <Loader />}
       {error && <div>{error}</div>}
       <div className='restaurants'>
         {allRestaurants &&

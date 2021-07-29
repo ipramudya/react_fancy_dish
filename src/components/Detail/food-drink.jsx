@@ -2,7 +2,9 @@ import { useContext } from 'react';
 import { RestaurantContext } from '../../context/RestaurantContext';
 
 const FoodDrink = () => {
-  const { restaurant } = useContext(RestaurantContext);
+  const {
+    restaurant: { restaurant },
+  } = useContext(RestaurantContext);
   return (
     <div className='food_drink'>
       <div className='foodndrink_container'>
