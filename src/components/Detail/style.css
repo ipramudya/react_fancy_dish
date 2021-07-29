@@ -21,10 +21,29 @@
 .restaurant_image {
   border-radius: 10px;
   overflow: hidden;
+  position: relative;
 }
 
 .restaurant_image > img {
   min-height: 100%;
+}
+
+.like_button {
+  border: none;
+  background-color: red;
+  border-radius: 50%;
+  position: absolute;
+  min-width: 50px;
+  min-height: 50px;
+  z-index: 99;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.like_button i {
+  font-size: 24px;
+  color: white;
 }
 
 /* 
@@ -278,15 +297,6 @@
 }
 
 /* Animation  */
-.zoomIn {
-  -webkit-animation-name: zoomIn;
-  animation-name: zoomIn;
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-}
-
 .slideInUp {
   -webkit-animation-name: slideInUp;
   animation-name: slideInUp;

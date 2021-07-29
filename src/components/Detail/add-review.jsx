@@ -1,10 +1,12 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import { RestaurantContext } from '../../context/RestaurantContext';
 import ENDPOINTS from '../../global/endpoints';
 import { postReview } from '../../utils/postReview';
 
 const AddReview = ({ id }) => {
   const [name, setName] = useState('');
   const [review, setReview] = useState('');
+  const { addCusReviews } = useContext(RestaurantContext);
 
   const submitHandler = (event) => {
     event.preventDefault();
@@ -18,6 +20,7 @@ const AddReview = ({ id }) => {
     postReview({
       url: ENDPOINTS.ADD_REVIEW,
       body,
+      addCusReviews,
     });
 
     setName('');

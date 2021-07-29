@@ -1,7 +1,7 @@
 import CONFIG from '../global/config';
 import axios from 'axios';
 
-export const postReview = ({ url, body }) => {
+export const postReview = ({ url, body, addCusReviews }) => {
   axios({
     method: 'post',
     url,
@@ -12,6 +12,7 @@ export const postReview = ({ url, body }) => {
     data: JSON.stringify(body),
   })
     .then((response) => {
+      addCusReviews(response.data.customerReviews);
       alert(response.data.message);
     })
     .catch((err) => {

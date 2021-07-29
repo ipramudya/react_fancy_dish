@@ -30,7 +30,7 @@ const useAxios = ({ url, method, body = null, headers = null }) => {
 
   useEffect(() => {
     fetchData();
-  }, [cusReviews]);
+  }, []);
 
   return { restaurant, loading, error };
 };
