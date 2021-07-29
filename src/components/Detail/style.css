@@ -143,7 +143,7 @@
   grid-template-columns: auto 1fr;
 }
 
-.icon {
+.restaurant .icon {
   width: 30px;
   text-align: center;
   margin-right: 5px;
@@ -247,6 +247,7 @@
 
 .detail_review {
   grid-column: 1 / 3;
+  grid-row: 3;
   margin-top: 30px;
   background-color: white;
   border-radius: 10px;
@@ -325,5 +326,44 @@
   100% {
     -webkit-transform: translateY(0);
     transform: translateY(0);
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .restaurant {
+    grid-template-columns: 1fr;
+  }
+
+  .detail_review {
+    grid-column: 1;
+  }
+
+  .detail_menu {
+    grid-row: 2;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .restaurant {
+    width: 90%;
+  }
+
+  .detail_button {
+    padding: 15px;
+    font-size: 16px;
+  }
+
+  .detail_button > i {
+    margin-left: 5px;
+  }
+
+  .menu_address .text {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .food_drink li {
+    font-size: 16px;
   }
 }

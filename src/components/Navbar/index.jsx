@@ -4,28 +4,43 @@ import { useEffect } from 'react';
 import './style.css';
 
 const Navbar = () => {
-  // animated app-bar purpose
+  const scrollEvent = () => {
+    document
+      .querySelector('.app_bar')
+      .classList.toggle('scrolling', window.scrollY > 50);
+  };
+
+  const hamburgerOnClick = async () => {
+    document.querySelector('.nav_bar').classList.toggle('reveal');
+  };
+
+  const linkOnClick = () => {
+    if (document.querySelector('.nav_bar').classList.contains('reveal')) {
+      document.querySelector('.nav_bar').classList.remove('reveal');
+    }
+  };
+
   useEffect(() => {
-    window.addEventListener('scroll', () => {
-      document
-        .querySelector('.app_bar')
-        .classList.toggle('scrolling', window.scrollY > 0);
-    });
+    window.addEventListener('scroll', scrollEvent);
   }, []);
 
   return (
     <header className='app_bar'>
-      <div className='logo'>
-        <h1>FancyDish</h1>
-      </div>
+      <button className='app_menu_btn' onClick={hamburgerOnClick}>
+        <i className='fas fa-bars app_menu_icon'></i>
+      </button>
       <ul className='nav_bar'>
         <li className='navbar_item'>
-          <NavLink to='/' activeClassName='active' exact>
+          <NavLink to='/' activeClassName='active' exact onClick={linkOnClick}>
             Home
           </NavLink>
         </li>
         <li className='navbar_item'>
-          <NavLink to='/favorite' activeClassName='active'>
+          <NavLink
+            to='/favorite'
+            activeClassName='active'
+            onClick={linkOnClick}
+          >
             Favorite
           </NavLink>
         </li>

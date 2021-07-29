@@ -1,6 +1,6 @@
 .banner {
   width: 100%;
-  height: 40vh;
+  height: 50vh;
   background-repeat: no-repeat;
   background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.5)),
     url('../../assets/banner-image.jpg');
@@ -26,4 +26,11 @@
   color: var(--second-color);
   font-family: var(--second-font);
   font-size: 24px;
+  margin: 0 30px;
+}
+
+@media screen and (max-width: 1200px) {
+  .banner_text:nth-child(2) {
+    font-size: 20px;
+  }
 }

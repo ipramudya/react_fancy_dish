@@ -91,7 +91,6 @@
 .card_rating {
   display: flex;
   align-items: center;
-  padding: 5px;
 }
 
 .card_title {
@@ -103,6 +102,14 @@
 .card_title:hover {
   color: var(--second-color);
   padding-left: 5px;
+}
+
+.card_detail {
+  margin: 20px 0 10px 0;
+}
+
+.card_city {
+  margin-right: 10px;
 }
 
 .icon i {
@@ -118,4 +125,46 @@
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
   line-height: 1.5;
+}
+
+@media screen and (max-width: 1200px) {
+  .restaurants {
+    grid-template-columns: repeat(3, auto);
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .menu_bar {
+    flex-direction: column;
+  }
+
+  .menu_tagline h2 {
+    margin: 0 auto;
+  }
+
+  .menu_tagline p {
+    text-align: center;
+  }
+
+  .search {
+    margin-top: 30px;
+  }
+
+  .search input {
+    min-width: 90%;
+  }
+
+  .search_icon {
+    min-width: 10%;
+  }
+
+  .restaurants {
+    grid-template-columns: repeat(2, auto);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .restaurants {
+    grid-template-columns: 1fr;
+  }
 }
