@@ -7,7 +7,7 @@ import { RestaurantContext } from '../context/RestaurantContext';
 axios.defaults.baseURL = CONFIG.BASE_URL;
 
 const useAxios = ({ url, method, body = null, headers = null }) => {
-  const { addRestaurant, restaurant, addCusReviews, cusReviews } =
+  const { addRestaurant, restaurant, addCusReviews } =
     useContext(RestaurantContext);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -30,7 +30,7 @@ const useAxios = ({ url, method, body = null, headers = null }) => {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [url]);
 
   return { restaurant, loading, error };
 };
